@@ -1,0 +1,19 @@
+name: Hello World App Deployment
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setting-up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Deploying Hello World App
+        run: python3 app.py
